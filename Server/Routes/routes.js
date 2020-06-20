@@ -378,7 +378,7 @@ data=[
     "province":"Larache",
     "zone":2
   },
-  {
+   {
     "province":"Kénitra",
     "zone":2
   }
