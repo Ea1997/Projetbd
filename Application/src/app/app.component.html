@@ -294,7 +294,7 @@ L’application s’inscrit dans la stratégie nationale de lutte contre la pand
                   <tr *ngFor="let pro of this.province">
                     <td class="font-weight-bold">{{pro.attributes.RegionFr}}​​</td>
                     <td align="center">{{pro.attributes.Cases}}</td>
-                    <td class="text-center"><span class="badge badge-danger">+1</span></td>
+                    <td class="text-center"><span class="badge badge-danger">{{pro.attributes.diff}}</span></td>
                   </tr>
                    </tbody>
                  <tfoot>
@@ -339,7 +339,7 @@ L’application s’inscrit dans la stratégie nationale de lutte contre la pand
 
     <div class="card-body" style="padding-left: 0.25rem; padding-right: 0.25rem;">
       <div class="chart-area" style="min-height:400px">
-        <canvas id="depistages_history"></canvas>
+        <canvas id="mycharttwo" class="col-md-12 col-xl-12 col-lg-12 "></canvas>
 
       </div>
 
@@ -366,81 +366,11 @@ L’application s’inscrit dans la stratégie nationale de lutte contre la pand
                   <tbody>
 
 
-  <tr><td>Aousserd</td><td align="center"><h5><span class="badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Boulemane</td><td align="center"><h5><span class="badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Chefchaouen</td><td align="center"><h5><span class="badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Es-Semara</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Fahs-Anjra</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Jerada</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>M'Diq-Fnideq</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Sidi Kacem</td><td align="center"><h5><span class="badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Tan-Tan</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Tarfaya</td><td align="center"><h5><span class="badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Tiznit</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Youssoufia</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Figuig</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Khénifra</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Ouazzane</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Sidi Slimane</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Chtouka-Ait Baha</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Boujdour</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Tata</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>El Kelâa des Sraghna</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Essaouira</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Oued Ed-Dahab</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Errachidia</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Guercif</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Taourirt</td><td align="center"><h5><span class="badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Driouch</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Tinghir</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Zagora</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Fquih Ben Salah</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Ifrane</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Chichaoua</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Inezgane-Ait Melloul</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Guelmim</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Berkane</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Sefrou</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Midelt</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Al Haouz</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Taza</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Oujda-Angad</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Meknès</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Rehamna</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Ouarzazate</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Assa-Zag</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Laâyoune</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Sidi Ifni</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Safi</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Moulay Yacoub</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Al Hoceima</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Khémisset</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Khouribga</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Agadir-Ida-Ou-Tnane</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Nador</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Taroudannt</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Taounate</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Azilal</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Settat</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Béni Mellal</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Tétouan</td><td align="center"><h5><span class=" badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Sidi Bennour</td><td align="center"><h5><span class="badge-success">Zone 1</span></h5></td></tr>
-  <tr><td>Kénitra</td><td align="center"><h5><span class=" badge-danger">Zone 2</span></h5></td></tr>
-  <tr><td>Skhirate-Témara</td><td align="center"><h5><span class=" badge-danger">Zone 2</span></h5></td></tr>
-  <tr><td>Fès</td><td align="center"><h5><span class="badge-danger">Zone 2</span></h5></td></tr>
-  <tr><td>Salé</td><td align="center"><h5><span class=" badge-danger">Zone 2</span></h5></td></tr>
-  <tr><td>Benslimane</td><td align="center"><h5><span class=" badge-danger">Zone 2</span></h5></td></tr>
-  <tr><td>El Jadida</td><td align="center"><h5><span class=" badge-danger">Zone 2</span></h5></td></tr>
-  <tr><td>Larache</td><td align="center"><h5><span class=" badge-danger">Zone 2</span></h5></td></tr>
-  <tr><td>Berrechid</td><td align="center"><h5><span class=" badge-danger">Zone 2</span></h5></td></tr>
-  <tr><td>Rabat</td><td align="center"><h5><span class=" badge-danger">Zone 2</span></h5></td></tr>
-  <tr><td>El Hajeb</td><td align="center"><h5><span class=" badge-danger">Zone 2</span></h5></td></tr>
-  <tr><td>Médiouna</td><td align="center"><h5><span class=" badge-danger">Zone 2</span></h5></td></tr>
-  <tr><td>Nouaceur</td><td align="center"><h5><span class=" badge-danger">Zone 2</span></h5></td></tr>
-  <tr><td>Mohammadia</td><td align="center"><h5><span class=" badge-danger">Zone 2</span></h5></td></tr>
-  <tr><td>Marrakech</td><td align="center"><h5><span class=" badge-danger">Zone 2</span></h5></td></tr>
-  <tr><td>Tanger-Assilah</td><td align="center"><h5><span class=" badge-danger">Zone 2</span></h5></td></tr>
-  <tr><td>Casablanca</td><td align="center"><h5><span class=" badge-danger">Zone 2</span></h5></td></tr>
+  <tr *ngFor="let zone of this.zones">
+    <td>{{zone.province}}</td>
+    <td align="center"><h5><span *ngIf="zone.zone==1" class="badge-success">Zone {{zone.zone}}</span><span *ngIf="zone.zone==2" class="badge-danger">Zone {{zone.zone}}</span></h5></td>
+  </tr>
+
                    </tbody>
                  <tfoot>
   </tfoot>
