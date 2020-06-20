@@ -1,0 +1,214 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+  }
+
+  /* Style the body */
+  body {
+    font-family: Calibri;
+    margin: 0;
+    width: 98.9%;
+
+  }
+
+  /* Header/logo Title */
+  .header {
+    padding: 40px;
+
+    text-align: center;
+    background: #B22222;
+    color: white;
+    width: 100%;
+  }
+  /*table*/
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 3px solid #ddd;
+  }
+
+  th, td {
+    text-align: center;
+    padding: 16px;
+    border: 3px solid #ddd;
+  }
+
+  th:first-child, td:first-child {
+    text-align: left;
+  }
+
+  tr:nth-child(even) {
+    background-color: #fff;
+  }
+
+
+  /* Increase the font size of the heading */
+  .header h1 {
+    font-size: 40px;
+  }
+
+  /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+  .navbar {
+    overflow: hidden;
+    background-color: #333;
+
+    top: 0;
+    color: white;
+  }
+
+  /* Style the navigation bar links */
+  .navbar a {
+    float: left;
+
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+
+
+  /* Right-aligned link */
+  .navbar a.right {
+    float: right;
+  }
+
+
+
+
+  /* Column container */
+  .row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+  }
+  .column {
+    width: 33%;
+  }
+  /* Create two unequal columns that sits next to each other */
+  /* Sidebar/left column */
+  .side {
+    -ms-flex: 30%; /* IE10 */
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+  }
+
+  /* Main column */
+  .main {
+    -ms-flex: 70%; /* IE10 */
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+  }
+
+  /* Fake image, just for this example */
+  .fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+  }
+  .badge-success{
+    color: white;
+    background-color: #3CB371;
+    border-radius: 5px;
+    border: 3px solid #3CB371;
+  }
+  .badge-danger{
+    color: white;
+    background-color: #ff3333;
+    border-radius: 5px;
+    border: 3px solid #ff3333;
+  }
+
+  .pagination {
+    display: inline-block;
+    background-color: white;
+    font-family: calibri;
+  }
+
+  .pagination a {
+    color: dimgrey;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+  }
+
+  .pagination a.active {
+    background-color: #e0ebeb;
+    color: white;
+    border: 1px solid #e0ebeb;
+  }
+
+  .pagination a:hover:not(.active) {background-color: #FF8C00;color: white;}
+
+  /* Footer */
+  .footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+  }
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+    font-weight: bold;
+  }
+  .about-section {
+  margin-top:10px;
+    padding: 10px;
+    text-align: center;
+    color: black;
+    border: 3px solid white;
+    background-color: #f1f1f1;
+
+
+  }
+  .div {
+  margin-top:10px;
+    padding: 10px;
+    text-align: left;
+    color: black;
+    border: 3px solid white;
+    background-color: #f1f1f1;
+
+
+  }
+  .logo {
+  margin-top:0px;
+    padding: 10px;
+    text-align: left;
+    color: black;
+    border: 3px solid white;
+    background-color: white;
+
+
+  }
+
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 700px) {
+    .row {
+      flex-direction: column;
+    }
+  }
+
+  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+  @media screen and (max-width: 400px) {
+    .navbar a {
+      float: none;
+      width: 100%;
+    }
+  }
