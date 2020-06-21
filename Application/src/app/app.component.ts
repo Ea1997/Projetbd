@@ -18,6 +18,8 @@ zones:any=null;
 
 }
 ngOnInit(){
+
+
   this.http.get('http://localhost:3000/allstats', {
 
   }).subscribe(
@@ -60,23 +62,38 @@ ngOnInit(){
           setTimeout(()=>{
 
             let data=JSON.parse(localStorage.getItem('province'));
-
-            if(data){
+            let datebefore=JSON.parse(localStorage.getItem('date'));
+            let myDate = new Date();
+            let date=myDate.toString().slice(0,15);
+            if(data && datebefore){
               var counts = Object.keys(this.province).length;
 
               for(let i=0;i<counts;i++){
-console.log(this.province[i].attributes.Cases+" "+data[i].attributes.Cases);
-                if(this.province[i].attributes.Cases == data[i].attributes.Cases){
+
+                if(date != datebefore && this.province[i].attributes.Cases == data[i].attributes.Cases){
                   this.province[i].attributes.diff=0;
-                }else{
+                }else if(date != datebefore && this.province[i].attributes.Cases != data[i].attributes.Cases){
                   this.province[i].attributes.diff=this.province[i].attributes.Cases-data[i].attributes.Cases;
                 }
-console.log(this.province[i].attributes.diff);
+
               }
 
             }
             setTimeout(()=>{
+              let datebefore=JSON.parse(localStorage.getItem('date'));
+              let myDate = new Date();
+              let date=myDate.toString().slice(0,15);
+if(datebefore){
+if(datebefore != date){
+  let not=JSON.stringify(date);
+
+              localStorage.setItem('date',not);
+}
+}
+
+
               let teste=JSON.stringify(this.province);
+
               localStorage.setItem('province',teste);
             },8000)
 
@@ -92,7 +109,7 @@ console.log(this.province[i].attributes.diff);
            diffj6=this.allstats[count-6].Confirmed-this.allstats[count-7].Confirmed;
 
             var myChart = new Chart('mychart', {
-              type: 'bar',
+              type: 'line',
               data: {
                   labels: ['J-5', 'J-4', 'J-3', 'J-2', 'Hier', "Aujourd'hui"],
                   datasets: [{

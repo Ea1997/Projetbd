@@ -1,15 +1,5 @@
-<html>
 
-<head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" ></script>
-
-</head>
-<body><div class="logo">
+<div class="logo">
   <h1><img style="width:15%;float: right;margin-top: 0px;" src="../assets/../assets/images/logo.PNG"> Actualités du Coronavirus au Maroc</h1>
 </div>
 <div class="header">
@@ -20,7 +10,7 @@
 <div class="navbar">
 
 
-        <a>Dernière vérification :{{this.statistique_maroc.Date}}</a>
+        <a>Dernière vérification :{{this.statistique_maroc.Date.slice(0,10)}}</a>
 
         <a style="align-content:right">Source : Ministère de la santé - covidmaroc</a>
 
@@ -160,7 +150,7 @@ L’application s’inscrit dans la stratégie nationale de lutte contre la pand
   <img style="width:100%" src="../assets/images/images.jpg">
 
 </div><br><div style="width:100%;border-style: solid; border-color: white;">
-    <h2>Le bilan du {{this.statistique_maroc.Date}}</h2>
+    <h2>Le bilan du {{this.statistique_maroc.Date.slice(0,10)}}</h2>
     <div style="box-sizing: border-box;"><div class="row">
 
             <div class="col-xl-4 col-md-6 mb-4">
@@ -274,9 +264,7 @@ L’application s’inscrit dans la stratégie nationale de lutte contre la pand
 
    <div class="div">
     <h2>Répartition des cas du Coronavirus par Région</h2>
-    <div><label>Recherche
-    	<input  type="search" style="width: 100%" class="form-control" placeholder="" id="myInput" ng-model="test">
-    </label>
+    <div>
     <table id="myTable">
                   <thead>
                     <tr>
@@ -293,13 +281,13 @@ L’application s’inscrit dans la stratégie nationale de lutte contre la pand
 
                   <tr *ngFor="let pro of this.province">
                     <td class="font-weight-bold">{{pro.attributes.RegionFr}}​​</td>
-                    <td align="center">{{pro.attributes.Cases}}</td>
-                    <td class="text-center"><span class="badge badge-danger">{{pro.attributes.diff}}</span></td>
+                    <td >{{pro.attributes.Cases}}</td>
+                    <td class="text-center"><span *ngIf="pro.attributes.diff != 0" class="badge badge-danger">{{pro.attributes.diff}}</span></td>
                   </tr>
                    </tbody>
                  <tfoot>
     <tr>
-      <td  colspan="3" align="center">Source : Ministère de la santé - covid maroc</td>
+      <td  colspan="3" >Source : Ministère de la santé - covid maroc</td>
 
     </tr>
   </tfoot>
@@ -368,7 +356,12 @@ L’application s’inscrit dans la stratégie nationale de lutte contre la pand
 
   <tr *ngFor="let zone of this.zones">
     <td>{{zone.province}}</td>
-    <td align="center"><h5><span *ngIf="zone.zone==1" class="badge-success">Zone {{zone.zone}}</span><span *ngIf="zone.zone==2" class="badge-danger">Zone {{zone.zone}}</span></h5></td>
+    <td >
+      <h5>
+        <span *ngIf="zone.zone==1" class="badge-success" style="padding: 5px;">Zone {{zone.zone}}</span>
+        <span *ngIf="zone.zone==2" class="badge-danger" style="padding: 5px;">Zone {{zone.zone}}</span>
+      </h5>
+    </td>
   </tr>
 
                    </tbody>
@@ -391,6 +384,7 @@ L’application s’inscrit dans la stratégie nationale de lutte contre la pand
     <h2>Sara Amadir</h2>
         <p class="title">Elève ingénieur en informatique</p>
         <p>sara.amadir01@gmail.com</p>
+        <a href="https://www.linkedin.com/in/sara-amadir-5640401a4/" target="_blank"> <i class="fab fa-linkedin fa-3x "  style="color:#0e76a8"></i></a>
       </div>
     </div>
   </div>
@@ -402,6 +396,7 @@ L’application s’inscrit dans la stratégie nationale de lutte contre la pand
       <h2 >Salim Elazhari</h2>
         <p class="title">Elève ingénieur en informatique</p>
         <p>salim.elazhari@gmail.com</p>
+        <a href="https://www.linkedin.com/in/elazhari-salim/" target="_blank"><i class="fab fa-linkedin fa-3x"  style="color:#0e76a8"></i></a>
       </div>
     </div>
   </div>
@@ -413,7 +408,7 @@ L’application s’inscrit dans la stratégie nationale de lutte contre la pand
       <h2>Majd Chagroufi</h2>
         <p class="title">Elève ingénieur en informatique</p>
         <p>majdchagroufi@gmail.com</p>
-
+        <a href="https://www.linkedin.com/in/majdchagroufi/" target="_blank"> <i class="fab fa-linkedin fa-3x " style="color:#0e76a8"></i></a>
       </div>
     </div>
   </div>
@@ -428,6 +423,10 @@ L’application s’inscrit dans la stratégie nationale de lutte contre la pand
           </div>
         </div>
       </footer>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 
