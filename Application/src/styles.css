@@ -154,7 +154,6 @@
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
-    font-weight: bold;
   }
   .about-section {
   margin-top:10px;
@@ -162,7 +161,7 @@
     text-align: center;
     color: black;
     border: 3px solid white;
-    background-color: #f1f1f1;
+    background-color: white;
 
 
   }
@@ -186,6 +185,21 @@
 
 
   }
+  .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {border-radius: 2px;}
+
 
 
   .container {
@@ -212,3 +226,4 @@
       width: 100%;
     }
   }
+
